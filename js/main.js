@@ -14,10 +14,14 @@ document.querySelectorAll('.plan-card').forEach(card => {
     event.preventDefault();
     const name = form.querySelector('#name').value;
     const address = form.querySelector('#address').value;
+    const plan = submitButton.getAttribute('data-plan'); // Obtener el tipo de plan
 
-    const whatsappMessage = `Hola, mi nombre es ${name}. Estoy interesado en contratar este plan. Mi dirección es: ${address}.`;
+    // Crear el mensaje
+    const whatsappMessage = `Hola, mi nombre es ${name}. Estoy interesado en contratar el siguiente plan: ${plan}. Mi dirección es: ${address}.`;
     const whatsappURL = `https://wa.me/+56296905?text=${encodeURIComponent(whatsappMessage)}`;
 
+    // Redirigir a WhatsApp
     window.open(whatsappURL, '_blank');
   });
 });
+
