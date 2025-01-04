@@ -4,9 +4,27 @@ body {
   background-color: #f5f7fa;
   margin: 0;
   padding: 0;
+  color: #333;
 }
 
-/* Contenedor */
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: #007BFF;
+  color: #fff;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+header p {
+  margin: 5px 0 0;
+  font-size: 16px;
+}
+
+/* Contenedor de planes */
 .plans-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -16,14 +34,13 @@ body {
 
 /* Diseño de tarjetas */
 .plan-card {
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 20px;
   text-align: center;
   background: linear-gradient(135deg, #007BFF, #0056b3);
   color: #fff;
   position: relative;
   overflow: hidden;
-  transform: translateY(0);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -62,37 +79,7 @@ body {
   color: #333;
 }
 
-/* Botón de WhatsApp */
-.whatsapp-button {
-  display: block;
-  margin-top: 10px;
-  text-decoration: none;
-  background-color: #25D366;
-  color: #fff;
-  padding: 10px 15px;
-  border-radius: 5px;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.whatsapp-button:hover {
-  background-color: #1DA851;
-}
-
-/* Estilo para el plan popular */
-.popular {
-  border: 3px solid #ffd700;
-}
-
-/* Animaciones */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
+/* Estilos del formulario */
 .contact-form {
   margin-top: 15px;
   padding: 10px;
@@ -103,9 +90,8 @@ body {
 
 .contact-form label {
   display: block;
-  font-size: 14px;
   margin: 5px 0;
-  color: #333;
+  font-size: 14px;
 }
 
 .contact-form input {
@@ -114,7 +100,6 @@ body {
   margin-bottom: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  font-size: 14px;
 }
 
 .contact-form button {
@@ -131,6 +116,15 @@ body {
   background-color: #1DA851;
 }
 
+/* Animaciones */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
 
 /* Responsividad */
 @media (max-width: 768px) {
@@ -140,10 +134,6 @@ body {
 
   .plan-card h2 {
     font-size: 20px;
-  }
-
-  .plan-card p {
-    font-size: 14px;
   }
 
   .plan-card .icon {

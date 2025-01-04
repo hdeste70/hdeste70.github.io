@@ -6,20 +6,18 @@ document.querySelectorAll('.plan-card').forEach(card => {
   // Mostrar el formulario
   showFormButton.addEventListener('click', () => {
     form.style.display = 'block';
-    showFormButton.style.display = 'none'; // Ocultar el botón de "Seleccionar Plan"
+    showFormButton.style.display = 'none';
   });
 
   // Enviar datos a WhatsApp
   form.addEventListener('submit', (event) => {
-    event.preventDefault(); // Prevenir recarga de la página
+    event.preventDefault();
     const name = form.querySelector('#name').value;
     const address = form.querySelector('#address').value;
 
-    // Enlace de WhatsApp con mensaje personalizado
     const whatsappMessage = `Hola, mi nombre es ${name}. Estoy interesado en contratar este plan. Mi dirección es: ${address}.`;
-    const whatsappURL = `https://wa.me/+5356296905?text=${encodeURIComponent(whatsappMessage)}`;
+    const whatsappURL = `https://wa.me/+56296905?text=${encodeURIComponent(whatsappMessage)}`;
 
-    // Redirigir a WhatsApp
     window.open(whatsappURL, '_blank');
   });
 });
