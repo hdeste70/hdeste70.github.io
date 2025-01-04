@@ -2,7 +2,7 @@ const canvas = document.getElementById('network');
 const ctx = canvas.getContext('2d');
 
 let width, height;
-const particles = [];
+const particles = [50];
 const maxParticles = 100; // Número de puntos
 const connectionDistance = 100; // Distancia máxima para conectar puntos
 
