@@ -1,0 +1,14 @@
+project-folder/
+├── index.html         # Página principal
+├── css/
+│   ├── styles.css     # Archivo principal de estilos
+├── js/
+│   ├── main.js        # Archivo de JavaScript (opcional para funcionalidades)
+├── images/
+│   ├── logo.png       # Logo de la empresa
+│   ├── background.jpg # Imagen de fondo (si se usa)
+├── fonts/
+│   ├── roboto.woff2   # Fuente personalizada (opcional)
+├── icons/
+│   ├── favicon.ico    # Ícono del sitio web
+├── README.md          # Descripción del proyecto
