@@ -23,6 +23,7 @@ document.querySelectorAll('.plan-card').forEach(card => {
     // Redirigir a WhatsApp
     window.open(whatsappURL, '_blank');
   });
+      // Pagina de Carga 
   class LoadingScreen {
     constructor(targetDate, loadingScreenId) {
         this.targetDate = new Date(targetDate).getTime(); // Fecha objetivo
@@ -32,7 +33,7 @@ document.querySelectorAll('.plan-card').forEach(card => {
         this.minutesElem = document.getElementById('minutes');
         this.secondsElem = document.getElementById('seconds');
     }
-
+     
     updateCountdown() {
         const now = new Date().getTime();
         const timeLeft = this.targetDate - now;
