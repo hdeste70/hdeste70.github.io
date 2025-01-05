@@ -23,5 +23,52 @@ document.querySelectorAll('.plan-card').forEach(card => {
     // Redirigir a WhatsApp
     window.open(whatsappURL, '_blank');
   });
+  class LoadingScreen {
+    constructor(targetDate, loadingScreenId) {
+        this.targetDate = new Date(targetDate).getTime(); // Fecha objetivo
+        this.loadingScreen = document.getElementById(loadingScreenId); // Contenedor de carga
+        this.daysElem = document.getElementById('days');
+        this.hoursElem = document.getElementById('hours');
+        this.minutesElem = document.getElementById('minutes');
+        this.secondsElem = document.getElementById('seconds');
+    }
+
+    updateCountdown() {
+        const now = new Date().getTime();
+        const timeLeft = this.targetDate - now;
+
+        if (timeLeft > 0) {
+            // Calcular días, horas, minutos y segundos
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            // Actualizar el contador en el DOM
+            this.daysElem.textContent = days.toString().padStart(2, '0');
+            this.hoursElem.textContent = hours.toString().padStart(2, '0');
+            this.minutesElem.textContent = minutes.toString().padStart(2, '0');
+            this.secondsElem.textContent = seconds.toString().padStart(2, '0');
+        } else {
+            // Cuando el contador llegue a cero, oculta la pantalla de carga
+            this.loadingScreen.style.display = 'none';
+        }
+    }
+
+    start() {
+        this.updateCountdown(); // Primera actualización
+        setInterval(() => this.updateCountdown(), 1000); // Actualización cada segundo
+    }
+}
+
+// Inicia la pantalla de carga
+document.addEventListener('DOMContentLoaded', () => {
+    const loadingScreen = new LoadingScreen(
+        '2025-01-10T00:00:00', // Fecha objetivo
+        'loading-screen'        // ID del contenedor de la pantalla de carga
+    );
+    loadingScreen.start();
+});
+
 });
 
