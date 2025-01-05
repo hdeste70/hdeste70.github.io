@@ -65,7 +65,7 @@ document.querySelectorAll('.plan-card').forEach(card => {
 // Inicia la pantalla de carga
 document.addEventListener('DOMContentLoaded', () => {
     const loadingScreen = new LoadingScreen(
-        '2025-01-10T00:00:00', // Fecha objetivo
+        '2025-01-04T21:08:00', // Fecha objetivo
         'loading-screen'        // ID del contenedor de la pantalla de carga
     );
     loadingScreen.start();
