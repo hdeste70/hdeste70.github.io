@@ -5,13 +5,14 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: #0d1117;
-  color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* Asegúrate de que esté por encima del resto del contenido */
+  color: #fff;
+  z-index: 1000; /* Asegura que esté encima del canvas */
+  text-align: center;
+  background: rgba(13, 17, 23, 0.85); /* Fondo semitransparente */
 }
 
 #loading-screen h1 {
@@ -35,15 +36,14 @@ body {
 }
 
 /* Fondo dinámico */
-.background {
+#network {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #1f1f1f 25%, #007BFF 75%);
-  z-index: -1;
-  animation: backgroundMove 10s infinite alternate;
+  z-index: -1; /* Asegura que esté detrás de todo */
+  background: #0d1117;
 }
 
 @keyframes backgroundMove {
