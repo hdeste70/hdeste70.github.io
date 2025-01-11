@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Clientes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Fondo dinámico -->
+    <canvas id="backgroundCanvas"></canvas>
+
+    <!-- Pantalla de carga -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="login-form">
+            <h1>Bienvenido</h1>
+            <p>Por favor, ingresa tus credenciales para continuar</p>
+            <input type="text" id="username" placeholder="Usuario" required>
+            <input type="password" id="password" placeholder="Contraseña" required>
+            <button id="loginBtn">Acceder</button>
+        </div>
+    </div>
+
+    <!-- Contenedor principal -->
+    <div class="container" style="display: none;">
+        <h1>Gestión de Clientes</h1>
+
+        <!-- Formulario para agregar clientes -->
+        <form id="clienteForm">
+            <input type="text" id="nombre" placeholder="Nombre" required>
+            <input type="text" id="ip_address" placeholder="IP Address" required>
+            <input type="date" id="fecha_ingreso" required>
+            <input type="date" id="proxima_fecha_pago" required>
+            <select id="plan_contratado" required>
+                <option value="">Selecciona un Plan</option>
+                <option value="Plan Básico">Plan Básico</option>
+                <option value="Plan Estándar">Plan Estándar</option>
+                <option value="Plan Premium">Plan Premium</option>
+                <option value="Plan Corporativo">Plan Corporativo</option>
+                <option value="Plan Personalizado">Plan Personalizado</option>
+            </select>
+            <input type="number" id="efectivo_a_pagar" placeholder="Efectivo a Pagar ($)" required>
+            <button type="submit">Agregar Cliente</button>
+        </form>
+
+        <!-- Tabla para mostrar clientes -->
+        <h2>Lista de Clientes</h2>
+        <table id="clientesTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>IP Address</th>
+                    <th>Fecha de Ingreso</th>
+                    <th>Próxima Fecha de Pago</th>
+                    <th>Plan Contratado</th>
+                    <th>Efectivo a Pagar</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <!-- Botón para exportar -->
+        <button id="exportar">Exportar a CSV</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
